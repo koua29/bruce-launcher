@@ -41,6 +41,16 @@ Un **lanceur / menu de favoris** pour tes scripts JavaScript sur le firmware **[
 - La **catégorie** = le premier sous-dossier sous le dossier choisi (reflète les catégories de l'App Store). Les scripts à la racine sont regroupés sous **`(root)`**.
 - Interface en **anglais** (comme le reste du firmware Bruce).
 
+## 🛒 Matériel / Hardware
+
+Le matériel utilisé pour ce projet — liens affiliés Amazon :
+
+| [<img src="docs/hw-lilygo.jpg" width="200" alt="LilyGO T-Embed CC1101 avec antennes">](https://link.amazon/B0cgD7wou) | [<img src="docs/hw-lilygo-black.jpg" width="200" alt="LilyGO T-Embed CC1101 noir">](https://link.amazon/B071fmsbH) | [<img src="docs/hw-antenna.jpg" width="200" alt="Kit d'antennes SMA">](https://link.amazon/B0eMlSqeZ) |
+|:---:|:---:|:---:|
+| 🔌 **[LilyGO T-Embed CC1101](https://link.amazon/B0cgD7wou)**<br><sub>avec antennes</sub> | ⬛ **[LilyGO T-Embed CC1101](https://link.amazon/B071fmsbH)**<br><sub>noir, sans antenne</sub> | 📡 **[Kit d'antennes SMA](https://link.amazon/B0eMlSqeZ)** |
+
+<sub>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises. · As an Amazon Associate I earn from qualifying purchases.</sub>
+
 ## ☕ Un café ?
 
 <img src="docs/paypal-qr.png" width="180" alt="PayPal" />
@@ -48,15 +58,3 @@ Un **lanceur / menu de favoris** pour tes scripts JavaScript sur le firmware **[
 ## 📄 Licence
 
 MIT — voir [LICENSE](LICENSE). Par **koua29** (Arnaud).
-
----
-
-## 🛒 Matériel / Hardware
-
-Le matériel utilisé pour ce projet — liens affiliés Amazon :
-
-| [<img src="docs/hw-lilygo.jpg" width="240" alt="LilyGO T-Embed CC1101">](https://link.amazon/B0cgD7wou) | [<img src="docs/hw-antenna.jpg" width="240" alt="Kit d'antennes SMA">](https://link.amazon/B0eMlSqeZ) |
-|:---:|:---:|
-| 🔌 **[LilyGO T-Embed CC1101](https://link.amazon/B0cgD7wou)** | 📡 **[Kit d'antennes SMA](https://link.amazon/B0eMlSqeZ)** |
-
-<sub>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises. · As an Amazon Associate I earn from qualifying purchases.</sub>
