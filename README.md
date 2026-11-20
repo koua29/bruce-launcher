@@ -1,60 +1,73 @@
-# 🚀 Bruce Launcher — menu de favoris pour tes scripts JS
+# 🚀 Bruce Launcher — a favorites menu for your JS scripts
+
+<p align="center">🇺🇸 <b>English</b> · 🇫🇷 <a href="README.fr.md">Français</a></p>
 
 [![Bruce firmware](https://img.shields.io/badge/firmware-Bruce-8A2BE2?logo=github)](https://github.com/BruceDevices/firmware) [![Device](https://img.shields.io/badge/device-LilyGO%20T--Embed%20CC1101-1E90FF)](https://github.com/BruceDevices/firmware) [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-> **EN** — A **launcher / favorites menu** for your JavaScript scripts on the **[Bruce firmware](https://github.com/BruceDevices/firmware)**. It **recursively scans** `/BruceJS`, `/scripts`, `/BruceScripts` **and their sub-folders**, groups scripts by category, and runs the one you pick with `load()`. Perfect for **App Store** scripts that get filed into sub-folders (`wifi/`, `RFID/`, …) and therefore **don't appear** in the built-in *Interpreter* menu. Set it as your **Startup App** to boot straight into your own menu.
+A **launcher / favorites menu** for your JavaScript scripts on the **[Bruce](https://github.com/BruceDevices/firmware)** firmware (tested on the **LilyGO T-Embed CC1101**). It **recursively scans** `/BruceJS`, `/scripts`, `/BruceScripts` **and their sub-folders**, groups scripts by category, and runs the one you pick with `load()`.
 
-Un **lanceur / menu de favoris** pour tes scripts JavaScript sur le firmware **[Bruce](https://github.com/BruceDevices/firmware)** (testé sur **LilyGO T-Embed CC1101**). Il **scanne récursivement** `/BruceJS`, `/scripts`, `/BruceScripts` **et leurs sous-dossiers**, regroupe les scripts par catégorie, et lance celui que tu choisis via `load()`.
+👉 **The problem it solves:** the Bruce **App Store** files downloaded scripts into **sub-folders** (`wifi/`, `RFID/`, `ir/`…). But the built-in **Interpreter** menu only shows the **root** of a folder → those scripts are **invisible**. This launcher finds them all and builds you a real menu.
 
-👉 **Le problème qu'il résout :** l'**App Store** de Bruce range les scripts téléchargés dans des **sous-dossiers** (`wifi/`, `RFID/`, `ir/`…). Or le menu **Interpreter** natif n'affiche que la **racine** d'un dossier → ces scripts sont **invisibles**. Ce lanceur les retrouve tous et te fait un vrai menu.
-
-| Choix du dossier | Catégories (sous-dossiers) |
+| Folder picker | Categories (sub-folders) |
 |------------------|----------------------------|
-| ![menu dossier](docs/folders.jpg) | ![menu catégories](docs/categories.jpg) |
+| ![folder menu](docs/folders.jpg) | ![category menu](docs/categories.jpg) |
 
-## ✨ Fonctionnalités
+## ✨ Features
 
-- **Scan récursif** (jusqu'à 4 niveaux) de `/BruceJS`, `/scripts`, `/BruceScripts`.
-- **Menu à 3 niveaux** :
-  1. **Dossier** — `/BruceJS` (défaut), un autre, **`* Tout`**, ou **`Browse SD...`** pour pointer n'importe quel dossier de la SD.
-  2. **Catégorie** — les sous-dossiers (wifi, RFID, ir…) avec le **nombre de scripts**, ou **`* All (A-Z)`**.
-  3. **Script** → lancé via `load()`.
-- **Retour au menu** automatique quand un script se termine (ou fait `exit()`).
-- **Explorateur SD** intégré (`..` pour remonter, *Pick HERE* pour choisir le dossier courant).
-- Se **masque lui-même** de la liste.
+- **Recursive scan** (up to 4 levels) of `/BruceJS`, `/scripts`, `/BruceScripts`.
+- **3-level menu**:
+  1. **Folder** — `/BruceJS` (default), another one, **`* Tout`** (all), or **`Browse SD...`** to point at any folder on the SD card.
+  2. **Category** — the sub-folders (wifi, RFID, ir…) with the **number of scripts**, or **`* All (A-Z)`**.
+  3. **Script** → run with `load()`.
+- **Automatic return to the menu** when a script ends (or calls `exit()`).
+- Built-in **SD browser** (`..` to go up, *Pick HERE* to choose the current folder).
+- **Hides itself** from the list.
 
 ## 🚀 Installation
 
-1. Copie **`Launcher.js`** à la **racine** d'un dossier lu par Bruce : **`/BruceJS`** (recommandé), `/scripts` ou `/BruceScripts`.
-2. Sur l'appareil : **Interpreter → `Launcher.js`**.
-3. **(Astuce)** Mets-le en **Config → Startup App** → au démarrage tu tombes directement sur ton menu de favoris. 🎯
+1. Copy **`Launcher.js`** to the **root** of a folder Bruce reads: **`/BruceJS`** (recommended), `/scripts` or `/BruceScripts`.
+2. On the device: **Interpreter → `Launcher.js`**.
+3. **(Tip)** Set it as **Config → Startup App** → at boot you land straight on your favorites menu. 🎯
 
-## ⚙️ Réglages (en tête du script)
+## ⚙️ Settings (top of the script)
 
-- `ROOTS` — dossiers scannés par défaut.
-- `MAX_DEPTH` — profondeur de recherche récursive (4 par défaut).
-- `SELF` — noms de fichiers à ne pas lister (le lanceur lui-même).
+- `ROOTS` — folders scanned by default.
+- `MAX_DEPTH` — recursive search depth (4 by default).
+- `SELF` — file names not to list (the launcher itself).
 
 ## 📝 Notes
 
-- Utilise les fonctions natives de l'interpréteur : `storage.readdir(dir, {withFileTypes:true})` et le global **`load(path)`**.
-- La **catégorie** = le premier sous-dossier sous le dossier choisi (reflète les catégories de l'App Store). Les scripts à la racine sont regroupés sous **`(root)`**.
-- Interface en **anglais** (comme le reste du firmware Bruce).
+- Uses the interpreter's native functions: `storage.readdir(dir, {withFileTypes:true})` and the global **`load(path)`**.
+- The **category** = the first sub-folder under the chosen folder (mirrors the App Store categories). Scripts at the root are grouped under **`(root)`**.
+- Interface in **English** (like the rest of the Bruce firmware).
 
-## 🛒 Matériel / Hardware
+## 🛒 Hardware
 
-Accessoires utiles pour ce projet — liens affiliés Amazon :
+*Amazon affiliate links: if you buy through these links, the project earns a small commission at no extra cost to you.*
 
-| [<img src="docs/amazon-B0D45MSMJR.jpg" width="200" alt="Anker 545 power bank (10 000 mAh)">](https://www.amazon.com/dp/B0D45MSMJR?linkCode=ll2&tag=koua29blauncher-20&ref_=as_li_ss_tl) | [<img src="docs/amazon-B0C1FCZM94.jpg" width="200" alt="433 MHz SMA antenna (2-pack)">](https://www.amazon.com/dp/B0C1FCZM94?linkCode=ll2&tag=koua29blauncher-20&ref_=as_li_ss_tl) | [<img src="docs/amazon-B0B7NVMBPL.jpg" width="200" alt="SanDisk 64 GB microSD (2-pack)">](https://www.amazon.com/dp/B0B7NVMBPL?linkCode=ll2&tag=koua29blauncher-20&ref_=as_li_ss_tl) |
-|:---:|:---:|:---:|
-| 🔋 **[Anker 545 power bank (10 000 mAh)](https://www.amazon.com/dp/B0D45MSMJR?linkCode=ll2&tag=koua29blauncher-20&ref_=as_li_ss_tl)**<br><sub>Pour faire tourner le T-Embed loin d'une prise</sub> | 📡 **[433 MHz SMA antenna (2-pack)](https://www.amazon.com/dp/B0C1FCZM94?linkCode=ll2&tag=koua29blauncher-20&ref_=as_li_ss_tl)**<br><sub>Antenne sub-GHz pour la radio CC1101</sub> | 💾 **[SanDisk 64 GB microSD (2-pack)](https://www.amazon.com/dp/B0B7NVMBPL?linkCode=ll2&tag=koua29blauncher-20&ref_=as_li_ss_tl)**<br><sub>Pour les thèmes, scripts et captures Bruce</sub> |
+<table>
+<tr>
+<td align="center" width="33%">
+  <a href="https://www.amazon.com/dp/B0D45MSMJR?linkCode=ll2&amp;tag=koua29blauncher-20&amp;ref_=as_li_ss_tl"><img src="docs/amazon-B0D45MSMJR.jpg" width="200" alt="Anker 545 power bank (10,000 mAh)"></a><br>
+  <b><a href="https://www.amazon.com/dp/B0D45MSMJR?linkCode=ll2&amp;tag=koua29blauncher-20&amp;ref_=as_li_ss_tl">Anker 545 power bank (10,000 mAh)</a></b><br><sub>Keeps the T-Embed running away from an outlet</sub>
+</td>
+<td align="center" width="33%">
+  <a href="https://www.amazon.com/dp/B0C1FCZM94?linkCode=ll2&amp;tag=koua29blauncher-20&amp;ref_=as_li_ss_tl"><img src="docs/amazon-B0C1FCZM94.jpg" width="200" alt="433 MHz SMA antenna (2-pack)"></a><br>
+  <b><a href="https://www.amazon.com/dp/B0C1FCZM94?linkCode=ll2&amp;tag=koua29blauncher-20&amp;ref_=as_li_ss_tl">433 MHz SMA antenna (2-pack)</a></b><br><sub>Sub-GHz antenna for the CC1101 radio</sub>
+</td>
+<td align="center" width="33%">
+  <a href="https://www.amazon.com/dp/B0B7NVMBPL?linkCode=ll2&amp;tag=koua29blauncher-20&amp;ref_=as_li_ss_tl"><img src="docs/amazon-B0B7NVMBPL.jpg" width="200" alt="SanDisk 64 GB microSD (2-pack)"></a><br>
+  <b><a href="https://www.amazon.com/dp/B0B7NVMBPL?linkCode=ll2&amp;tag=koua29blauncher-20&amp;ref_=as_li_ss_tl">SanDisk 64 GB microSD (2-pack)</a></b><br><sub>For Bruce themes, scripts and captures</sub>
+</td>
+</tr>
+</table>
 
-<sub>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises. · As an Amazon Associate I earn from qualifying purchases.</sub>
+<sub>As an Amazon Associate I earn from qualifying purchases.</sub>
 
-## ☕ Un café ?
+## ☕ Buy me a coffee
 
 <img src="docs/paypal-qr.png" width="180" alt="PayPal" />
 
-## 📄 Licence
+## 📄 License
 
-MIT — voir [LICENSE](LICENSE). Par **koua29**.
+MIT — see [LICENSE](LICENSE). By **koua29**.
